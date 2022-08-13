@@ -1,0 +1,20 @@
+{
+  "name": "short-code",
+  "displayName": "short-code",
+  "description": "Laravel short code templates",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "php",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

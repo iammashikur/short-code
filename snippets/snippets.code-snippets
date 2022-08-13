@@ -1,0 +1,146 @@
+{
+    "Php Array": {
+        "prefix": [
+            "array"
+        ],
+        "body": [
+            "['${1:name}' => ${2:val}]"
+        ],
+    },
+    "Php Array Element": {
+        "prefix": [
+            "array-element"
+        ],
+        "body": [
+            "'${1:name}' => ${2:val},"
+        ],
+    },
+    "Php Variable": {
+        "prefix": [
+            "var"
+        ],
+        "body": [
+            "$${1:var} = "
+        ],
+    },
+
+
+
+    "Route get function": {
+        "prefix": [
+            "get-fun"
+        ],
+        "body": [
+            "Route::get('/${1}', function(${2:Request $$request}) {",
+            "\t$0",
+            "})->name('${3}');"
+        ],
+    },
+    "Route get controller": {
+        "prefix": [
+            "get-con"
+        ],
+        "body": [
+            "Route::get('${1}', ['${2}','${3}'])->name('${4}');"
+        ],
+    },
+
+    "Route post function": {
+        "prefix": [
+            "post-fun"
+        ],
+        "body": [
+            "Route::post('/${1}', function(${2:Request $$request}) {",
+            "\t$0",
+            "})->name('${3}');"
+        ],
+    },
+    "Route post controller": {
+        "prefix": [
+            "get-post"
+        ],
+        "body": [
+            "Route::post('${1}', ['${2}','${3}'])->name('${4}');"
+        ],
+    },
+
+
+    "Model where get": {
+        "prefix": [
+            "m-where-get"
+        ],
+        "body": [
+            "${1:Model}::where(['${2}' => '${3}'])->get(${4});"
+        ],
+    },
+    "Model where paginate": {
+        "prefix": [
+            "m-where-paginate"
+        ],
+        "body": [
+            "${1:Model}::where(['${2}' => '${3}'])->paginate(${4});"
+        ],
+    },
+    "Insert data using model": {
+        "prefix": [
+            "m-insert"
+        ],
+        "body": [
+            "$${2:var} = new ${1:Model}();",
+            "$${2:var}->item = $request->item;",
+            "$${2:var}->save();"
+        ],
+    },
+    "Update data using model": {
+        "prefix": [
+            "m-update"
+        ],
+        "body": [
+            "$${3:var} = ${1:Model}::find($${2:id});",
+            "$${3:var}->item = $$request->item;",
+            "$${3:var}->save();"
+        ],
+    },
+    "Return back": {
+        "prefix": [
+            "return-back"
+        ],
+        "body": [
+            "return redirect()->back();",
+        ],
+    },
+    "Return route": {
+        "prefix": [
+            "return-route"
+        ],
+        "body": [
+            "return redirect()->route('${2:name}');",
+        ],
+    },
+    "Return route notifiication": {
+        "prefix": [
+            "return-route-notification"
+        ],
+        "body": [
+            "$$notification = trans('${2}');",
+            "$$notification = ['message' => $$notification, 'alert-type' => '${3:success,error,warning}'];",
+            "return redirect()->route('${1:name}')->with($$notification);",
+        ],
+    },
+    "Return view": {
+        "prefix": [
+            "return-view"
+        ],
+        "body": [
+            "return view('${1:view}');",
+        ],
+    },
+    "Return view compact": {
+        "prefix": [
+            "return-view-compact"
+        ],
+        "body": [
+            "return view('${1:view}',compact('${2:variable}');",
+        ],
+    },
+}
